@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+Route::get('user/verify/{verification_code}', 'AuthController@verifyUser');
+
+Route::get('/{any}', 'SpaController@index')->where('any', '^((?!api).)*');

@@ -13,6 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+//Auth
+Route::group(['prefix' => 'auth'], function () {
+    Route::post('register', 'AuthController@register');
+    Route::post('login', 'AuthController@login')->name('login');
+});
+
+//Test
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('test', function () {
+        return response()->json(['foo' => 'bar']);
+    });
+    Route::post('test', 'TestController@store');
+    Route::apiResource('tests', 'TestController');
 });
