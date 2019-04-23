@@ -1,14 +1,23 @@
 <template>
 	<div>
-	<h1>MYPAGE</h1>
-	<h1>MYPAGE</h1>
-	<h1>MYPAGE</h1>
-	<h1>MYPAGE</h1>
+		<Userdata></Userdata>
+		<UserPersonalLobby></UserPersonalLobby>
 	</div>
 </template>
 <script>
-	
+
+import Userdata from '../../components/user/Userdata.vue'
+import UserPersonalLobby from '../../components/user/UserPersonalLobby.vue'
+export default {
+  components: {
+    Userdata,
+    UserPersonalLobby
+  },
+  // ...
+}
+
+
 </script>
 <style>
-	
+
 </style>
