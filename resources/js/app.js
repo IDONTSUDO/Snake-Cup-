@@ -14,7 +14,7 @@ import Register from './components/Register.vue'
 import Login from './components/Login.vue'
 import Mypage from './views/user/Mypage.vue'
 //store
-import {store} from './store/Index.js';
+//import {store} from './store/Index.js';
 // /home/idontsudo/vue/lara/src/resources/js/store/user
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
