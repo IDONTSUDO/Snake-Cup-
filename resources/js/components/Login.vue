@@ -38,7 +38,7 @@
             success: function () {},
             error: function () {},
             rememberMe: true,
-            redirect: '/dashboard',
+            redirect: {path: '/dashboard'},
             fetchUser: true,
         });       
       },
