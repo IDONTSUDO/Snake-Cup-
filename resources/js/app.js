@@ -1,20 +1,25 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
-import App from './App.vue';
-import Dashboard from './components/Dashboard.vue';
-import Home from './components/Home.vue';
-import Register from './components/Register.vue';
-import Login from './components/Login.vue';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import App from './App.vue'
+import Dashboard from './components/Dashboard.vue'
+import Home from './components/Home.vue'
+import Register from './components/Register.vue'
+import Login from './components/Login.vue'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Mypage from './views/user/Mypage.vue'
 
+Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 
 axios.defaults.baseURL = 'http://localhost:8000/api';
 
 const router = new VueRouter({
-
+    mode: 'history',
     routes: [{
         path: '/',
         name: 'home',
@@ -32,6 +37,22 @@ const router = new VueRouter({
     },
     {
         path: '/login',
+        name: 'login',
+        component: Login,
+        meta: {
+            auth: false
+        }
+    },
+    {
+        path: '/mypage',
+        name: 'Mypage',
+        component: Mypage,
+        meta: {
+            auth: false
+        }
+    },
+        {
+        path: '/*',
         name: 'login',
         component: Login,
         meta: {
