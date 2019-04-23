@@ -3018,6 +3018,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3034,8 +3040,13 @@ __webpack_require__.r(__webpack_exports__);
           email: app.email,
           password: app.password
         },
-        success: function success() {},
-        error: function error() {},
+        success: function success() {
+          app.success = true;
+        },
+        error: function error(resp) {
+          app.error = true;
+          app.errors = resp.response.data.errors;
+        },
         rememberMe: true,
         redirect: {
           path: '/dashboard'
@@ -3876,6 +3887,45 @@ var render = function() {
           "button",
           { staticClass: "btn btn-default", attrs: { type: "submit" } },
           [_vm._v("Sign in")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "form-group",
+            class: { "has-error": _vm.error && _vm.errors.name }
+          },
+          [
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.name,
+                  expression: "name"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", id: "name", required: "" },
+              domProps: { value: _vm.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.name = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.error && _vm.errors.name
+              ? _c("span", { staticClass: "help-block" }, [
+                  _vm._v(_vm._s(_vm.errors.name))
+                ])
+              : _vm._e()
+          ]
         )
       ]
     )
