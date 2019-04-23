@@ -700,6 +700,11 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
+"@websanova/vue-auth@^2.21.14-beta":
+  version "2.21.14-beta"
+  resolved "https://registry.yarnpkg.com/@websanova/vue-auth/-/vue-auth-2.21.14-beta.tgz#315c24c5ab4c560a46d832cb1f5a702d054a1dc7"
+  integrity sha512-p2ahPPxhjknbwOWd+JAIZwqcZY9L1J8l0fYAH6tbIKz+CktvKtGlv4LeNPDtZQQF6ByWXdU1XQ/XFOwyDNjCkQ==
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -5365,11 +5370,16 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-axios@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.4.tgz#a9d298f7e876f9a87feb336b37adcbce34ff9f9f"
+  integrity sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
 
-vue-loader@^15.4.2:
+vue-loader@^15.4.2, vue-loader@^15.7.0:
   version "15.7.0"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.7.0.tgz#27275aa5a3ef4958c5379c006dd1436ad04b25b3"
   dependencies:
@@ -5406,6 +5416,16 @@ vue-template-es2015-compiler@^1.9.0:
 vue@^2.5.17:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
+
+vuetify@^1.5.8:
+  version "1.5.12"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.5.12.tgz#77d18fc7ea5d6297bac40880df83fc241ba840a2"
+  integrity sha512-NxYNPiqEEgprTzNft0x0oiyOgbclbARgOJMKWRfeu3qx8pE0JG3XMgljVv1Ttq0ErKf1lvNLFRuajDgRdQxR/Q==
+
+vuex@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.0.tgz#634b81515cf0cfe976bd1ffe9601755e51f843b9"
+  integrity sha512-mdHeHT/7u4BncpUZMlxNaIdcN/HIt1GsGG5LKByArvYG/v6DvHcOxvDCts+7SRdCoIRGllK8IMZvQtQXLppDYg==
 
 watchpack@^1.5.0:
   version "1.6.0"

@@ -7,7 +7,7 @@ use Redirect;
 use Illuminate\Http\Request;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use Validator, DB, Hash, Mail;
+use Validator, DB, Hash, Mail, Auth;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Mail\Message;
 
@@ -27,14 +27,14 @@ class AuthController extends Controller
         $credentials = $request->only('name', 'email', 'password');
 
         $rules = [
-            'name' => 'required|min:3|max:255|',
+            'name' => 'required|min:3|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|max:255',
         ];
 
         $validator = Validator::make($credentials, $rules);
         if ($validator->fails()) {
-            return response()->json(['success' => false, 'error' => $validator->messages()]);
+            return response()->json(['success' => false, 'error' => $validator->errors()]);
         }
 
         /*
@@ -96,7 +96,7 @@ class AuthController extends Controller
 
         try {
             // attempt to verify the credentials and create a token for the user
-            if (!$token = JWTAuth::attempt($credentials)) {
+            if (!$token = $this->guard()->attempt($credentials)) {
                 return response()->json(['success' => false, 'error' => 'We cant find an account with this credentials. Please make sure you entered the right information and you have verified your email address.'], 404);
             }
         } catch (JWTException $e) {
@@ -105,6 +105,33 @@ class AuthController extends Controller
         }
         // all good so return the token
         return $this->respondWithToken($token);
+    }
+
+    /**
+     * Method will refresh the token if it has expired.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function refresh()
+    {
+        if ($token = $this->guard()->refresh()) {
+            return $this->respondWithToken($token);
+        }
+        return response()->json(['error' => 'refresh_token_error'], 401);
+    }
+
+    /**
+     * Method will be used to disconnect users by disabling the token.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout()
+    {
+        $this->guard()->logout();
+        return response()->json([
+            'success' => true,
+            'msg' => 'Logged out Successfully.'
+        ], 200);
     }
 
     /**
@@ -141,7 +168,7 @@ class AuthController extends Controller
                 ];
             }
         }
-        //TODO: Deside what to do after verification...
+        //TODO: Decide what to do after verification...
         $getParams = http_build_query($response);
         
         return Redirect::to('http://snakecup.com?'.$getParams);
@@ -157,5 +184,10 @@ class AuthController extends Controller
                 'expires_in' => auth()->factory()->getTTL() * 60
             ]
         ]);
+    }
+
+    private function guard()
+    {
+        return Auth::guard();
     }
 }
