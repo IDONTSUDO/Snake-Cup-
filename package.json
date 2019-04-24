@@ -43,6 +43,8 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.19",
     "es6-promise": "^4.2.6",
+    "jquery-bracket": "^0.11.1",
+    "portal-vue": "^2.1.1",
     "vuex": "^3.1.0"
   }
 }

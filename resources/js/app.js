@@ -6,6 +6,7 @@ import VueAxios from 'vue-axios'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import BootstrapVue from 'bootstrap-vue'
+import PortalVue from 'portal-vue'
 //componets
 import App from './App.vue'
 import Dashboard from './components/Dashboard.vue'
@@ -15,7 +16,7 @@ import Login from './components/Login.vue'
 import Mypage from './views/user/Mypage.vue'
 //store
 //import {store} from './store/Index.js';
-// /home/idontsudo/vue/lara/src/resources/js/store/user
+Vue.use(PortalVue);
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
