@@ -16,6 +16,12 @@
                     <li v-if="$auth.check()" class="pull-right">
                         <a href="#" @click.prevent="$auth.logout()">Logout</a>
                     </li>
+                    <li v-if="$auth.check()" class="pull-right">
+                        <router-link :to="{ name: 'mypage' }">Mypage</router-link>
+                    </li>
+                    <li v-if="$auth.check()" class="pull-right">
+                        <router-link :to="{ name: 'balance' }">Balance</router-link>
+                    </li>
                 </ul>
             </nav>
         </div>

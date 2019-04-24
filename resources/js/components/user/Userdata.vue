@@ -1,6 +1,8 @@
 <template>
 	<div>
-	<h1>Data</h1>
+	<div>
+    	{{ $auth.user().email }}
+	</div>
 
 	</div>
 </template>

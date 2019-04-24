@@ -14,6 +14,7 @@ import Home from './components/Home.vue'
 import Register from './components/Register.vue'
 import Login from './components/Login.vue'
 import Mypage from './views/user/Mypage.vue'
+import Balance from './views/user/Balance.vue'
 //store
 //import {store} from './store/Index.js';
 Vue.use(PortalVue);
@@ -41,6 +42,15 @@ const router = new VueRouter({
         }
     },
     {
+        path: '/balance',
+        name: 'balance',
+        component: Balance,
+        meta: {
+
+            auth: false
+        }
+    },
+    {
         path: '/login',
         name: 'login',
         component: Login,
@@ -49,7 +59,7 @@ const router = new VueRouter({
         }
     },
     {
-        path: '/mypage',
+        path: '/mypage:id',
         name: 'Mypage',
         component: Mypage,
         meta: {
