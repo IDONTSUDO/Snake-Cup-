@@ -11,20 +11,20 @@
   },
   "devDependencies": {
     "@websanova/vue-auth": "^2.21.14-beta",
-    "axios": "^0.18",
-    "bootstrap": "^4.0.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
     "cross-env": "^5.1",
-    "jquery": "^3.2",
+    "jquery": "^3.4.0",
     "laravel-mix": "^4.0.7",
     "lodash": "^4.17.5",
     "popper.js": "^1.12",
     "resolve-url-loader": "^2.3.1",
     "sass": "^1.15.2",
     "sass-loader": "^7.1.0",
-    "vue": "^2.5.17",
+    "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
     "vue-loader": "^15.7.0",
-    "vue-router": "^3.0.2",
+    "vue-router": "^3.0.6",
     "vue-template-compiler": "^2.6.10",
     "vuetify": "^1.5.8"
   },
@@ -41,6 +41,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.19",
+    "es6-promise": "^4.2.6",
+    "jquery-bracket": "^0.11.1",
+    "portal-vue": "^2.1.1",
     "vuex": "^3.1.0"
   }
 }

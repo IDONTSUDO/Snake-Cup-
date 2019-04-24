@@ -1,5 +1,6 @@
 <template>
     <div>
+        
         <div class="alert alert-danger" v-if="error">
             <p>There was an error, unable to sign in with those credentials.</p>
         </div>
@@ -16,14 +17,16 @@
         </form>
     </div>
 </template>
-
+цйу
 <script>
   export default {
     data(){
       return {
         email: null,
         password: null,
-        error: false
+        error: false,
+        errors: {},
+        success: false
       }
     },
 
@@ -35,10 +38,15 @@
               email: app.email,
               password: app.password
             }, 
-            success: function () {},
-            error: function () {},
+            success: function () {
+                app.success = true
+            },
+            error: function (resp) {
+                app.error = true;
+                app.errors = resp.response.data.errors;
+            },
             rememberMe: true,
-            redirect: '/dashboard',
+            redirect: {path: '/dashboard'},
             fetchUser: true,
         });       
       },
