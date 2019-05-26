@@ -1,0 +1,16 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "websocket ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "IDONTSUDO",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "hapi-socket.io": "^1.0.2",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
