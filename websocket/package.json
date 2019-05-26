@@ -4,13 +4,16 @@
   "description": "websocket ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "author": "IDONTSUDO",
   "license": "MIT",
   "dependencies": {
     "hapi": "^18.1.0",
     "hapi-socket.io": "^1.0.2",
-    "jsonwebtoken": "^8.5.1"
+    "hoek": "^6.1.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.11"
   }
 }

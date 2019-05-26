@@ -1,0 +1,15 @@
+{
+  "name": "nigtmaretest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "IDONTSUDO",
+  "license": "ISC",
+  "dependencies": {
+    "nightmare": "^3.0.2"
+  }
+}
