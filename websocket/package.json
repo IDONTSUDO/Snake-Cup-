@@ -14,6 +14,6 @@
     "hapi-socket.io": "^1.0.2",
     "hoek": "^6.1.3",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.11"
+    "mongoose": "^5.7.5"
   }
 }
